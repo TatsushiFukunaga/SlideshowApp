@@ -30,6 +30,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let secondViewController : SecondViewController = (segue.destination as? SecondViewController)!
         
+        if (timer != nil){
+            timer.invalidate()
+            timer = nil
+        }
         secondViewController.selectedImage = imageView.image
     }
 
